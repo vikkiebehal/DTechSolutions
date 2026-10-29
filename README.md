@@ -135,3 +135,9 @@ The portable build runs Vinext directly without a host `timeout` command. The ma
 ## Enquiry delivery configuration
 
 The quote endpoint fails closed until all five Sites runtime environment variables are configured: `RESEND_API_KEY` (secret, send-only), `ENQUIRY_TO` (the verified business destination), `ENQUIRY_FROM` (a sender address on a domain verified with Resend), `TURNSTILE_SITE_KEY` (public widget key), and `TURNSTILE_SECRET_KEY` (secret). Configure the Turnstile widget for the deployed Site hostname. Set values through Sites environment settings; do not commit credentials. Redeploy after changing runtime values. The endpoint validates the request and Turnstile token before asking Resend to accept a message; an accepted API response does not guarantee inbox delivery. Test delivery to the verified destination after configuration. Until then the form is disabled and displays a setup message.
+
+## Deployment targets
+
+For Vercel, use the Next.js framework preset and `npm run build` (native `next build`); no output-directory override is needed. Node.js 22 is specified in `package.json`. Set `RESEND_API_KEY`, `ENQUIRY_TO`, `ENQUIRY_FROM`, `TURNSTILE_SITE_KEY`, and `TURNSTILE_SECRET_KEY` in Vercel's environment settings for each intended deployment environment. Configure the Turnstile widget to allow the Vercel hostname. The form remains unavailable until all values are present. Provider acceptance is not proof of inbox delivery.
+
+For ChatGPT Sites / Cloudflare, `npm run dev` retains the Vinext development workflow and `npm run build:sites` builds the Worker output in `dist/`. Run the Sites source-packaging workflow with `npm run build:sites` as the build command; the generic Sites build helper invokes `npm run build`, which targets Next.js for Vercel in this repository. Worker bindings remain request-scoped.
