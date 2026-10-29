@@ -1,0 +1,28 @@
+const categories=['Smart Interactive Flat Panels','All-in-One PCs','Digital Signage Displays','Indoor LED Display Walls','Outdoor LED Display Walls','Commercial & Professional Displays','Video Conferencing & Audio Systems','AI PTZ Cameras','Teaching Studio & AV Equipment','Display Accessories & Related Hardware'];
+const photos={hero:'assets/classroom.png',panel:'assets/panel.png',meeting:'assets/classroom.png',screen:'assets/led.png',office:'assets/conference.png',classroom:'assets/classroom.png',computer:'assets/aio.png',signage:'assets/signage.png',outdoor:'assets/outdoor.png',studio:'assets/studio.png'};
+const products=[
+{id:'interactive-panel',name:'Interactive Flat Panel',category:categories[0],size:'55", 65", 75", 86", 98", 110"',application:'Education',image:photos.panel,summary:'A collaborative display concept for lessons, presentations and shared ideas.',features:['4K UHD display options','Multi-touch interaction','Digital whiteboarding','Screen sharing options'],specs:{'Available sizes':'55", 65", 75", 86", 98", 110"','Resolution':'4K UHD options','Operating system':'Android variants, model dependent','Expansion':'Windows OPS compatibility, model dependent'}},
+{id:'commercial-display',name:'Professional Display',category:categories[5],size:'Multiple sizes',application:'Business',image:photos.signage,summary:'A commercial display concept for presentations and visual communication.',features:['Commercial display options','Flexible screen sizes','Content display capabilities'],specs:{'Size':'Multiple configurations','Application':'Business and commercial spaces','Configuration':'Subject to selected model'}},
+{id:'all-in-one',name:'All-in-One PC',category:categories[1],size:'Multiple sizes',application:'Education',image:photos.computer,summary:'A streamlined computing concept for learning and everyday work.',features:['Integrated display and computer','Flexible configurations','Space-conscious setup'],specs:{'Screen size':'Multiple configurations','Processor':'Options vary by model','Memory & storage':'Options vary by model'}},
+{id:'digital-signage',name:'Digital Signage Display',category:categories[2],size:'Multiple sizes',application:'Retail',image:photos.signage,summary:'A display concept for timely information and engaging commercial spaces.',features:['Digital content display','Multiple size options','Commercial applications'],specs:{'Size':'Multiple configurations','Application':'Retail and commercial spaces','Features':'Subject to selected model'}},
+{id:'indoor-led',name:'Indoor LED Display Wall',category:categories[3],size:'Custom',application:'Business',image:photos.screen,summary:'A modular display concept for larger indoor visual experiences.',features:['Large-format display','Modular configurations','Indoor applications'],specs:{'Configuration':'Project dependent','Application':'Indoor spaces'}},
+{id:'outdoor-led',name:'Outdoor LED Display Wall',category:categories[4],size:'Custom',application:'Retail',image:photos.outdoor,summary:'A large-format display concept for outdoor communication.',features:['Large-format presentation','Project-specific configuration'],specs:{'Configuration':'Project dependent','Application':'Outdoor spaces'}},
+{id:'conference-audio',name:'Conference Audio System',category:categories[6],size:'Not applicable',application:'Business',image:photos.office,summary:'Audio collaboration equipment for modern meeting spaces.',features:['Meeting room audio','Configuration options'],specs:{'Application':'Conference and collaboration','Configuration':'Subject to selected model'}},
+{id:'ai-camera',name:'AI PTZ Camera',category:categories[7],size:'Not applicable',application:'Business',image:photos.office,summary:'A camera concept for more flexible hybrid collaboration.',features:['Pan, tilt and zoom','AI features vary by model'],specs:{'Application':'Video conferencing','Features':'Subject to selected model'}},
+{id:'teaching-studio',name:'Teaching Studio Equipment',category:categories[8],size:'Not applicable',application:'Education',image:photos.studio,summary:'Equipment options for hybrid lessons and content creation.',features:['Hybrid teaching applications','Configurable equipment'],specs:{'Application':'Teaching studios','Configuration':'Project dependent'}},
+{id:'display-accessories',name:'Display Accessories',category:categories[9],size:'Not applicable',application:'Business',image:photos.panel,summary:'Related hardware to support a practical display installation.',features:['Mounting and connectivity options','Selected to suit your setup'],specs:{'Compatibility':'Subject to selected hardware','Configuration':'Project dependent'}}];
+
+// Application tags are shared by every experience; each concept has one catalogue record.
+const applicationTags={
+  'interactive-panel':['Education','Corporate & Commercial','Classroom','Training Room','Boardroom','Conference Room','Collaboration'],
+  'commercial-display':['Corporate & Commercial','Boardroom','Retail'],
+  'all-in-one':['Education','Corporate & Commercial','Classroom','Training Room'],
+  'digital-signage':['Education','Corporate & Commercial','Campus','Retail'],
+  'indoor-led':['Education','Corporate & Commercial','Lecture Hall','Conference Room'],
+  'outdoor-led':['Corporate & Commercial','Retail'],
+  'conference-audio':['Education','Corporate & Commercial','Training Room','Conference Room'],
+  'ai-camera':['Education','Corporate & Commercial','Hybrid Learning','Conference Room'],
+  'teaching-studio':['Education','Hybrid Learning','Training Room'],
+  'display-accessories':['Education','Corporate & Commercial','Classroom','Boardroom']
+};
+products.forEach(p=>{p.applications=applicationTags[p.id]||[]});
