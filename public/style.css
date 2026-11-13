@@ -8,3 +8,23 @@ html{scroll-padding-top:90px}body{overflow-x:hidden}main,section,article{min-wid
 /* Official logo: original proportions and colours on a light surface. */
 .logo{display:inline-flex;flex:none;align-items:center;line-height:0}.logo img{display:block;width:170px;height:auto;aspect-ratio:1125/370;object-fit:contain}.footer{padding-top:0}.footer-brand-band{background:#f7f9fc;padding:20px 0;margin-bottom:50px}.footer-brand-band .logo img{width:190px}.footer-grid>div:first-child p:first-child{margin-top:0}@media(max-width:560px){.logo img{width:145px}.footer-brand-band .logo img{width:175px}.footer-brand-band{padding:16px 0;margin-bottom:36px}}
 .footer .business-attribution{color:#e0e8f4;font-weight:600;margin:18px 0 4px}.footer .business-gstin{color:#b4c0d2;font-size:12px;margin:0 0 18px}.business-info{margin-top:30px;padding-top:24px;border-top:1px solid #dbe3ee}.business-info h3{font:700 17px Manrope;margin:0 0 14px}.business-info p{font-size:13px;line-height:1.7;color:#667085;margin:0 0 10px}.business-info strong{color:#344054}
+
+/* D Tech Solutions contact information and accessible WhatsApp shortcut */
+.top-contact{display:flex;gap:12px;align-items:center;text-transform:none;letter-spacing:0;font-size:12px}
+.top-contact a{color:#dbe6f8;white-space:nowrap}
+.top-contact a:hover,.top-contact a:focus-visible{color:#fff;text-decoration:underline}
+.footer-grid{grid-template-columns:minmax(0,1.7fr) repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,46px)}
+.footer-contact a{overflow-wrap:anywhere}
+.contact-methods{margin:24px 0 28px}
+.contact-methods h3{font:700 17px Manrope;margin:0 0 14px}
+.contact-method-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.contact-method-list a{display:flex;flex-direction:column;gap:6px;justify-content:center;min-height:76px;border:1px solid #dbe3ee;background:#fff;border-radius:6px;padding:14px;transition:border-color .2s,box-shadow .2s;min-width:0}
+.contact-method-list a:hover,.contact-method-list a:focus-visible{border-color:#2563eb;box-shadow:0 5px 18px #0b17301a}
+.contact-method-list span{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#667085}
+.contact-method-list strong{font-size:13px;color:#0b1730;overflow-wrap:anywhere}
+.floating-whatsapp{position:fixed;right:24px;bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:80;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:#128c4a;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.23);transition:transform .2s,box-shadow .2s}
+.floating-whatsapp:hover{transform:translateY(-3px);box-shadow:0 11px 28px rgba(0,0,0,.28)}
+.floating-whatsapp:focus-visible{outline:3px solid #0b1730;outline-offset:4px}
+@media(max-width:1050px){.top-contact{display:none}}
+@media(max-width:850px){.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.contact-method-list{grid-template-columns:1fr}.floating-whatsapp{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:56px;height:56px}}
